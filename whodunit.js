@@ -200,3 +200,4 @@ const verdict = declareMurderer();
 console.log(verdict);
 
 // There now exist two murderer variables: the one on line 189 and the one in the block that spans lines 191 - 193. Line 192 isn't changing line 189. We know this because of the let in front of it.
+// This means that Professor Plum remains.
