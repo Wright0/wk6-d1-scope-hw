@@ -65,8 +65,9 @@ const suspects = declareAllSuspects();
 console.log(suspects);
 console.log(`Suspect three is ${suspectThree}.`);
 
-// I think the first console.log will return "The suspects are Miss Scarlet, Professor Plum, Colonel Mustard." This is because the variable suspectThree is declared using a let, meaning it can be reassigned. It then is within the declareAllSuspects function
+// I think the first console.log will return "The suspects are Miss Scarlet, Professor Plum, Mrs. Peacock." This is because the variable suspectThree is declared using a let, meaning it can be reassigned. It then is within the declareAllSuspects function.
 // Juuuust kidding! Ran it and got it wrong. Got to scenario 7 before I realized I'd missed a let. Came back to this one and noticed the let within the declareAllSuspects. This means that the declareAllSuspects function creates a new suspectThree variable that exists within that scope. The function is able to pull suspectOne and suspectTwo from the outer scope, but uses it's own variables first and therefore prioritizes the Colonel Mustard murderer variable.
+// Answer: "The suspects are Miss Scarlet, Professor Plum, Colonel Mustard."
 
 //SCENARIO 5
 const scenario = {
@@ -181,7 +182,7 @@ console.log(verdict);
 //   console.log(false);
 // }
 
-// I think it will be Candle Stick. I'm writing a test this time to give myself more tests.
+// I think it will be Candle Stick. I'm writing a test this time to give myself more attempts.
 //That passed! Logged the verdict to make sure my test wasn't faulty and it was indeed Candle Stick.
 
 // SCENARIO 9
