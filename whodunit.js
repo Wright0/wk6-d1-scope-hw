@@ -68,6 +68,7 @@ console.log(`Suspect three is ${suspectThree}.`);
 // I think the first console.log will return "The suspects are Miss Scarlet, Professor Plum, Mrs. Peacock." This is because the variable suspectThree is declared using a let, meaning it can be reassigned. It then is within the declareAllSuspects function.
 // Juuuust kidding! Ran it and got it wrong. Got to scenario 7 before I realized I'd missed a let. Came back to this one and noticed the let within the declareAllSuspects. This means that the declareAllSuspects function creates a new suspectThree variable that exists within that scope. The function is able to pull suspectOne and suspectTwo from the outer scope, but uses it's own variables first and therefore prioritizes the Colonel Mustard murderer variable.
 // Answer: "The suspects are Miss Scarlet, Professor Plum, Colonel Mustard."
+//"Suspect three is Mrs. Peacock"
 
 //SCENARIO 5
 const scenario = {
@@ -99,7 +100,6 @@ const changeMurderer = function() {
   const plotTwist = function() {
     murderer = 'Mrs. White';
   }
-
   plotTwist();
 }
 
@@ -112,6 +112,7 @@ const verdict = declareMurderer();
 console.log(verdict);
 
 //I believe the result will be "The murderer is Mrs. White." At first glance, I thought it might not be, because of what happened in story 3, but I think that that all happened because of the result of the function call being assigned to a variable. Here, it's just being called, so I think it'll change the murderer variable.
+//UPDATE: That's not the correct reasoning (see above scenario 4 to see reason), buuut the answer here is correct. It has to do with "lets" and creating vs. reassigning variables.
 
 //SCENARIO 7
 let murderer = 'Professor Plum';
@@ -125,10 +126,8 @@ const changeMurderer = function() {
     const unexpectedOutcome = function() {
       murderer = 'Miss Scarlet';
     }
-
     unexpectedOutcome();
   }
-
   plotTwist();
 }
 
@@ -141,7 +140,7 @@ const verdict = declareMurderer();
 console.log(verdict);
 
 // "The murderer is Colonel Mustard." Reasoning: when called, the function changeMurder changes the murderer variable (created using let and therefore reassignabke) 3 times. My guess about the changes are as follows: Professor Plum -> Mr Green -> Miss Scarlet -> Colonel Mustard.
-// Post running: oooo This one was tricksy! I didn't notice that the plotTwist function had a "let" in front of Colonel Mustard. That meant that it was creating a new murderer variable within that block, not changing any existing ones elsewherer. Then, because the unexpectedOutcome function is within the same block, it changes Colonel Mustard to Miss Scarlet. The outer scoped murderer therefore remains Mr. Green.
+// Post running: oooo This one was tricksy! I didn't notice that the plotTwist function had a "let" in front of Colonel Mustard. That meant that it was creating a new murderer variable within that block, not changing any existing ones elsewhere. Then, because the unexpectedOutcome function is within the same block, it changes Colonel Mustard to Miss Scarlet. The outer scoped murderer therefore remains Mr. Green.
 
 // SCENARIO 8
 const scenario = {
